@@ -51,6 +51,7 @@ const removeBucketItem = (id) => {
     // TODO: Add a key attribute set to the value of the index position
     // Hint: use a ternary operator
     <div className={`bucket-row ${item.eagerness}${item.completed ? ' complete': ''}`} key={index}>
+    <div className={`bucket-row ${item.eagerness}${item.completed ? ' complete': ''}`} key={index}>
 
       // TODO: Add an onClick event that invokes the `completeBucketItem` method passing the item id as a argument
       <div key={index} onClick={()=> completeBucketItem(item.id)}>
@@ -61,6 +62,7 @@ const removeBucketItem = (id) => {
         // TODO: Add an onClick event update the `edit` object with the `id`, `value`, and `eagerness` properties
         <p onClick={()=>  setEdit ({ id: item.id, value: item.text, eagerness: item.eagerness })}>✏️</p>
         {/* TODO: Add an onClick event that will invoke the removeBucketItem method passing in the `item.id` */}
+        <p onClick={()=> removeBucketItem(item.id)}> 🗑️</p>
         <p onClick={()=> removeBucketItem(item.id)}> 🗑️</p>
       </div>
     </div>

@@ -4,7 +4,7 @@ function BucketForm(props) {
   const [input, setInput] = useState('');
   let [eagerness, setEagerness] = useState('');
 
-  // TODO: Use this array in the return statement below
+  // TODO: Use this array in the return statement below *DONe*
   const eagernessLevel = ['high', 'medium', 'low']
 
   const handleSubmit = (e) => {
@@ -46,7 +46,7 @@ function BucketForm(props) {
             {eagerness || 'Priority'}
           </button>
           <div className="dropdown-content">
-            {/* TODO: Add an onClick event that will set the corresponding eagerness level from the `eagernessLevel` array */}
+            {/* TODO: Add an onClick event that will set the corresponding eagerness level from the `eagernessLevel` array *DONE**/}
             <p onClick={setEagerness(eagernessLevel[0])}>Must do</p>
             <p onClick={setEagerness(eagernessLevel[1])}>Want to do</p>
             <p onClick={setEagerness(eagernessLevel[2])}>Take it or leave it</p>
