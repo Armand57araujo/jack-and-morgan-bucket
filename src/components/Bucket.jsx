@@ -11,37 +11,34 @@ function Bucket(props) {
   console.log(props.bucket);
 
   const submitUpdate = (value) => {
-
     // TODO: Write logic to update the `edit` value in state after a user updates an entry in the list
-    // Hint: use the `setEdit` method to update the `edit` object in state
-    // Hint: use the spread operator to copy the `edit` object in state
-    // Hint: use the `value` argument passed into the `submitUpdate` method to update the `edit.value` property
-    // Hint: use the `edit.id` property to update the `edit.id` property
-    // Hint: use the `edit.eagerness` property to update the `edit.eagerness` property
-    // Hint: use the `props.bucket` array to update the `props.bucket` array
-    // Hint: use the `setBucket` method to update the `props.bucket` array
-    // Hint: use the `map` method to loop over the `props.bucket` array
-    // Hint: use a ternary operator to check if the `item.id` matches the `edit.id` property
-    // Hint: if the `item.id` matches the `edit.id` property, return the `edit` object
-    // Hint: if the `item.id` does not match the `edit.id` property, return the `item` object
-   
-    
-
-
+    props.editBucketItem(edit.id, edit);
     setEdit({
       id: null,
       value: '',
       eagerness: '',
-    });
+    
+    })
   };
-
+  if (edit.id) {
+    return <BucketForm edit={edit} onSubmit={submitUpdate} />;
+  }
+  const updatedBucket = props.bucket.map((item) => (item.id === edit.id ? edit : item)
+  );
     // TODO: Set the key:value pairs in the `edit` object back to empty strings
 const completeBucketItem = (id) => {
-
+  let updatedBucket = props.bucket.map((item) => {
+    if (item.id === id) {
+      item.completed = !item.completed;
+    }
+    return item;
+  });
+  props.setBucket(updatedBucket);
   };
 
 const removeBucketItem = (id) => {
-
+  let updatedBucket = [...props.bucket].filter((item) => item.id !== id);
+  props.setBucket(updatedBucket);
   };
 
   // If the user is attempting to edit an item, render the bucket form with the edit variable passed as a prop
