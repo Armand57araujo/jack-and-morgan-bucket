@@ -55,13 +55,13 @@ const removeBucketItem = (id) => {
     // Hint: use a ternary operator
     <div className={`bucket-row ${item.eagerness}${item.completed ? ' complete': ''}`} key={index}>
 
-      // TODO: Add an onClick event that invokes the `completeBucketItem` method passing the item id as a argument
+      {/* { TODO: Add an onClick event that invokes the `completeBucketItem` method passing the item id as a argument} */}
       <div key={index} onClick={()=> completeBucketItem(item.id)}>
         {item.text}
           {/* TODO: Add the item text here */}
       </div>
       <div className="icons">
-        // TODO: Add an onClick event update the `edit` object with the `id`, `value`, and `eagerness` properties
+       {/* // TODO: Add an onClick event update the `edit` object with the `id`, `value`, and `eagerness` properties */}
         <p onClick={()=>  setEdit ({ id: item.id, value: item.text, eagerness: item.eagerness })}>✏️</p>
         {/* TODO: Add an onClick event that will invoke the removeBucketItem method passing in the `item.id` */}
         <p onClick={()=> removeBucketItem(item.id)}> 🗑️</p>
