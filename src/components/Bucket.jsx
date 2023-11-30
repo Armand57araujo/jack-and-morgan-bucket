@@ -62,7 +62,6 @@ const removeBucketItem = (id) => {
         <p onClick={()=>  setEdit ({ id: item.id, value: item.text, eagerness: item.eagerness })}>✏️</p>
         {/* TODO: Add an onClick event that will invoke the removeBucketItem method passing in the `item.id` */}
         <p onClick={()=> removeBucketItem(item.id)}> 🗑️</p>
-        <p onClick={()=> removeBucketItem(item.id)}> 🗑️</p>
       </div>
     </div>
   ));
