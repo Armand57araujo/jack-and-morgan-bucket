@@ -51,7 +51,6 @@ const removeBucketItem = (id) => {
     // TODO: Add a key attribute set to the value of the index position
     // Hint: use a ternary operator
     <div className={`bucket-row ${item.eagerness}${item.completed ? ' complete': ''}`} key={index}>
-    <div className={`bucket-row ${item.eagerness}${item.completed ? ' complete': ''}`} key={index}>
 
       // TODO: Add an onClick event that invokes the `completeBucketItem` method passing the item id as a argument
       <div key={index} onClick={()=> completeBucketItem(item.id)}>
@@ -68,5 +67,7 @@ const removeBucketItem = (id) => {
     </div>
   ));
 }
+
+
 
 export default Bucket;
